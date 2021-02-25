@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Notification from './notification/Notification';
+import style from './feedStatInfo.module.css';
 
 export default class Statistic extends Component {
   render() {
@@ -8,8 +9,7 @@ export default class Statistic extends Component {
     return (
       <>
         {total > 0 ? (
-          <div>
-            <h2>Statistc</h2>
+          <div className={style.statInfo}>
             <p>Good: {good}</p>
             <p>Neutral: {neutral}</p>
             <p>Bad: {bad}</p>

@@ -1,0 +1,14 @@
+.statBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+  height: 400px;
+  margin-top: 30px;
+  background-color: #ffffff;
+  position: relative;
+  border: 2px solid #d4d4d4;
+  border-radius: 50px;
+  box-shadow: 0 0 15px #0099ff;
+  padding: 20px 40px;
+}

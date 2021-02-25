@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import FeedbackOptions from './feedback/feedbackOptions/FeedbackOptions';
 import Statistic from './feedback/feedBackStatistic/Statistic';
+import Section from './feedback/section/section';
+import style from './app.module.css';
 
 export default class App extends Component {
   state = {
@@ -30,6 +32,7 @@ export default class App extends Component {
 
   handleButtonClick = ({ target }) => {
     const { name } = target;
+
     this.setState(prevState => {
       return {
         [name]: prevState[name] + 1,
@@ -41,17 +44,22 @@ export default class App extends Component {
   render() {
     const { good, neutral, bad, total, positaveFeedback } = this.state;
     return (
-      <>
-        <h1>Please leave feedback</h1>
-        <FeedbackOptions onBtnClick={this.handleButtonClick} />
-        <Statistic
-          good={good}
-          neutral={neutral}
-          bad={bad}
-          total={total}
-          positaveFeedback={positaveFeedback}
-        />
-      </>
+      <div className={style.statBox}>
+        <Section title="Please leave feedback">
+          <FeedbackOptions onBtnClick={this.handleButtonClick} />
+        </Section>
+        <Section title="Statistic">
+          {
+            <Statistic
+              good={good}
+              neutral={neutral}
+              bad={bad}
+              total={total}
+              positaveFeedback={positaveFeedback}
+            />
+          }
+        </Section>
+      </div>
     );
   }
 }
